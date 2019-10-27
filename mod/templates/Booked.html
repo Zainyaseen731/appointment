@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">First_Name</th>
+      <th scope="col">Last_Nmae</th>
+      <th scope="col">Email</th>
+      <th scope="col">Note</th>
+      <th scope="col">date</th>
+      <th scope="col">time</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for obj in object%}
+     <tr>
+       <td>{{obj.first_name}}</td>
+       <td>{{obj.last_name}} </td>
+       <td>{{obj.email}}</td>
+       <td>{{obj.note}}</td>
+       <td>{{obj.date}}</td>
+       <td>{{obj.time}}</td>
+       <td>
+            <div class="checkbox">
+                <label><input type="checkbox" {% if obj.status %} checked {% endif %}></label>
+            </div>
+        </td>
+       <td>{{obj.status}}</td>
+     </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</body>
+</html>
